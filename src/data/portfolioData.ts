@@ -94,7 +94,7 @@ export const caseStudiesData: CaseStudyItem[] = [
       "Provided a fast local protection layer for database connection pools during sudden traffic spikes.",
       "Reduced the risk of drop-rate oscillation by combining AIMD control with a capacity dead band and local circuit breakers."
     ],
-    learnings: "In distributed resilience, relying solely on centralized telemetry creates dangerous control-loop lags. Combining AIMD shedding with autonomous in-app local circuit breakers acts orders of magnitude faster than centralized orchestrators when protecting shared downstream bottlenecks."
+    learnings: "In distributed resilience, relying solely on centralized telemetry creates dangerous control-loop lags. Combining AIMD shedding with autonomous in-app local circuit breakers can react much faster than centralized control loops when protecting shared downstream bottlenecks."
   },
   {
     id: "case-ollama-jev",
