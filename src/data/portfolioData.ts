@@ -2,8 +2,8 @@ import { ProfileInfo, ExperienceItem, CaseStudyItem, EducationItem, AwardItem } 
 
 export const profileData: ProfileInfo = {
   name: "Sanghoon Kim",
-  title: "Senior Software Engineer / Distributed Systems & AI Platforms",
-  tagline: "Software engineer with 10+ years of experience across enterprise R&D and early-stage startups, specializing in platform architecture, distributed systems, and AI/LLM integration.",
+  title: "Senior Software Engineer / Backend Systems & Cloud Architecture",
+  tagline: "Software engineer with 10+ years of experience across enterprise R&D and early-stage startups, specializing in resilient backend architecture, cloud infrastructure, and data pipelines.",
   email: "galaxytemple@gmail.com",
   github: "https://github.com/galaxytemple",
   linkedin: "https://linkedin.com/in/galaxytemple",
@@ -55,7 +55,7 @@ export const experienceData: ExperienceItem[] = [
       "Built a Notion-style real-time collaborative Markdown editor prototype using React, WebSockets, and CRDT libraries to achieve conflict-free, concurrent multi-user editing with low latency.",
       "Architected the initial AWS cloud infrastructure and deployment environment as a founding engineer; developed custom Markdown parsing interfaces and conducted rapid feasibility spikes to evaluate collaborative document workflows."
     ],
-    tags: ["React", "WebSockets", "CRDT", "AWS", "Markdown Parser", "Distributed State", "0-to-1"],
+    tags: ["React", "WebSockets", "CRDT", "AWS", "Markdown Parser", "Real-Time Sync", "0-to-1"],
     isDefaultOpen: false,
   },
   {
