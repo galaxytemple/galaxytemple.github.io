@@ -97,10 +97,11 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ items }) =
                         gapX={6}
                         gapY={6}
                         paddingX={8}
-                        fontSize={11.5}
+                        fontSize={12}
                         fontWeight={500}
-                        fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+                        fontFamily="ui-monospace, monospace"
                         expandable
+                        overflowLabel={(count) => `+${count} more`}
                         className="tags-row"
                         renderTag={(tag: string) => (
                           <span key={tag} className="tag-chip">

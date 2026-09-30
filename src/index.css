@@ -674,6 +674,8 @@ html[data-theme='dark'] .sticky-top-bar.is-visible {
 }
 
 .tags-row {
+  width: 100%;
+  min-width: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
