@@ -689,7 +689,10 @@ html[data-theme='dark'] .sticky-top-bar.is-visible {
 }
 
 .tag-chip {
-  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-size: 11px;
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
   background-color: var(--badge-bg);
