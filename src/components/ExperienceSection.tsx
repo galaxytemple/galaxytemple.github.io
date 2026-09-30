@@ -104,6 +104,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ items }) =
                         expandable
                         overflowLabel={(count) => `+${count} more`}
                         className="tags-row"
+                        style={{ width: '100%', minWidth: 0 }}
                         renderTag={(tag: string) => (
                           <span key={tag} className="tag-chip">
                             {tag}
