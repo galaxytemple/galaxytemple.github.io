@@ -93,6 +93,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ items }) =
                     {item.tags && item.tags.length > 0 && (
                       <TagListOverflow
                         items={item.tags}
+                        tagSize="sm"
                         maxLines={2}
                         gapX={6}
                         gapY={6}
