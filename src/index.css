@@ -690,6 +690,21 @@ html[data-theme='dark'] .sticky-top-bar.is-visible {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+.tag-chip-overflow {
+  cursor: pointer;
+  background-color: var(--badge-bg);
+  color: var(--text-muted);
+  border: 1px dashed var(--badge-border);
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.tag-chip-overflow:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background-color: var(--card-bg);
+}
+
 /* ==========================================================================
    Case Studies Section (Graphite Engineering Style)
    ========================================================================== */

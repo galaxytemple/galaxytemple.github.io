@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { TagListOverflow } from 'tag-list-overflow';
 import { ExperienceItem } from '../types/portfolio';
 
 interface ExperienceSectionProps {
@@ -90,13 +91,36 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ items }) =
                     </ul>
 
                     {item.tags && item.tags.length > 0 && (
-                      <div className="tags-row">
-                        {item.tags.map((tag) => (
+                      <TagListOverflow
+                        items={item.tags}
+                        maxLines={2}
+                        gapX={6}
+                        gapY={6}
+                        paddingX={8}
+                        fontSize={11.5}
+                        fontWeight={500}
+                        fontFamily="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+                        expandable
+                        className="tags-row"
+                        renderTag={(tag: string) => (
                           <span key={tag} className="tag-chip">
                             {tag}
                           </span>
-                        ))}
-                      </div>
+                        )}
+                        renderOverflow={({ count, toggle, isExpanded }) => (
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggle();
+                            }}
+                            className="tag-chip tag-chip-overflow"
+                            aria-label={isExpanded ? 'Show fewer tags' : `Show ${count} more tags`}
+                          >
+                            {isExpanded ? '− less' : `+${count} more`}
+                          </button>
+                        )}
+                      />
                     )}
                   </div>
                 </div>
