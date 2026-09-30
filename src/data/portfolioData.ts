@@ -79,7 +79,7 @@ export const experienceData: ExperienceItem[] = [
 export const caseStudiesData: CaseStudyItem[] = [
   {
     id: "case-aws-load-shedding",
-    title: "Surviving Traffic Spikes Without Envoy: Serverless Tiered Load Shedding on AWS",
+    title: "Handling Traffic Spikes Without Envoy: Serverless Tiered Load Shedding on AWS",
     year: "2026",
     category: "Production System",
     publication: "Towards AWS",
@@ -90,11 +90,11 @@ export const caseStudiesData: CaseStudyItem[] = [
     solution: "Implemented a multi-tiered shedding strategy: AWS API Gateway handles outer-tier throttling with DynamoDB-backed rate tracking and short-lived in-memory worker caches, while an AIMD-based drop-rate algorithm regulates non-critical requests with a capacity dead band to reduce oscillation.",
     architecture: "When database latency crosses defined thresholds, the AIMD controller incrementally sheds lower-priority traffic. If a worker observes repeated database checkout timeouts within a rolling window, an in-app circuit breaker locally sheds resource-intensive endpoints with HTTP 503 responses, without terminating the container.",
     results: [
-      "Avoided the need for dedicated Envoy/Redis infrastructure in the proposed architecture, reducing operational complexity.",
+      "Replaced the need for dedicated Envoy/Redis infrastructure in the proposed design, reducing operational complexity for a lean team.",
       "Provided a fast local protection layer for database connection pools during sudden traffic spikes.",
       "Reduced the risk of drop-rate oscillation by combining AIMD control with a capacity dead band and local circuit breakers."
     ],
-    learnings: "In distributed resilience, relying solely on centralized telemetry creates dangerous control-loop lags. Combining AIMD shedding with autonomous in-app local circuit breakers can react much faster than centralized control loops when protecting shared downstream bottlenecks."
+    learnings: "The standard approach to high-traffic resilience can become over-engineered for a small team when the operational cost of running infrastructure such as Envoy or Kong outweighs its benefits. Managed AWS services and serverless components can provide a simpler alternative without taking on that operational burden.\n\nHowever, centralized telemetry and control loops introduce a different trade-off: aggregating metrics and coordinating fleet-wide decisions can create tens of seconds to minutes of delay before the system reacts to a degrading downstream dependency. An autonomous in-process circuit breaker provides a fast local safety layer that can react immediately, protecting shared database connections while the centralized control loop catches up."
   },
   {
     id: "case-ollama-jev",
@@ -113,7 +113,7 @@ export const caseStudiesData: CaseStudyItem[] = [
       "Proposed bidirectional permutation prompting and cache-aligned prompt construction as practical mitigations.",
       "Characterized the latency impact of repeated prefill work and the resulting throughput trade-offs for local verification."
     ],
-    learnings: "Agentic architectures designed for hosted cloud APIs cannot be naively ported to local runtimes. Without shared KV-cache reuse across evaluation passes, repeated prompt prefill creates substantial overhead for local multi-agent verification."
+    learnings: "The experiment challenged the assumption that JEV is simply a wrapper around repeated LLM calls. Reproducing the workflow locally showed that reliable verification depends on the interaction between model behavior, prompting strategy, and inference-system architecture.\n\nOrder bias and dual rejection exposed failure modes in the model-and-prompting setup, while redundant KV-cache prefill exposed a runtime-level bottleneck. The key takeaway was that reproducing an agentic LLM system locally requires understanding and designing for both the model and the inference stack—not just recreating the API-level workflow."
   },
   {
     id: "case-tag-overflow-canvas",
@@ -132,7 +132,7 @@ export const caseStudiesData: CaseStudyItem[] = [
       "Reduced measured tag-layout calculation time from ~12ms to <0.2ms in the benchmark workload.",
       "Open-sourced the solution as the lightweight tag-list-overflow package, providing a zero-reflow alternative for data-dense tables and chip lists."
     ],
-    learnings: "The fastest DOM operation is the one that avoids touching the DOM. When dynamic UI layout depends on text geometry, off-DOM Canvas measurement provides a predictable, low-overhead way to compute layout boundaries before rendering."
+    learnings: "Dynamic UI layout problems do not always need to be solved through DOM measurement. When the required geometry can be derived from text metrics, moving the calculation off the live DOM can eliminate an entire class of forced-layout costs while keeping the rendering path simple."
   },
 ];
 

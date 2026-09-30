@@ -922,6 +922,10 @@ html[data-theme='dark'] .sticky-top-bar.is-visible {
   line-height: 1.6;
 }
 
+.cs-deep-dive-block p + p {
+  margin-top: 0.6rem;
+}
+
 .cs-deep-dive-block ul {
   margin: 0;
   padding: 0;

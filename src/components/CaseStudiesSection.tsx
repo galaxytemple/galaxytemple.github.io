@@ -103,7 +103,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ items })
                     </div>
 
                     <div className="cs-deep-dive-block">
-                      <h4>Measurable Impact</h4>
+                      <h4>Impact & Outcomes</h4>
                       <ul>
                         {item.results.map((res, idx) => (
                           <li key={idx}>
@@ -116,7 +116,9 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ items })
                     {item.learnings && (
                       <div className="cs-deep-dive-block">
                         <h4>Key Learnings</h4>
-                        <p>{item.learnings}</p>
+                        {item.learnings.split('\n\n').map((para, idx) => (
+                          <p key={idx}>{para}</p>
+                        ))}
                       </div>
                     )}
                   </div>
