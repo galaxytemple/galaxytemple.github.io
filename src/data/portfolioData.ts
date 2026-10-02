@@ -8,7 +8,6 @@ export const profileData: ProfileInfo = {
   github: "https://github.com/galaxytemple",
   linkedin: "https://linkedin.com/in/galaxytemple",
   medium: "https://medium.com/@galaxytemple",
-  pdfUrl: "./res/resume_s.pdf",
 };
 
 export const experienceData: ExperienceItem[] = [

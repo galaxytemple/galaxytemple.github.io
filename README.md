@@ -9,7 +9,7 @@ Designed for direct hosting on **GitHub Pages** (`https://galaxytemple.github.io
 
 ## 🧭 Structure & Sections
 
-1. **Header & Profile**: Name, subtitle, tagline, PDF resume download button, social & email links, and light/dark theme toggle.
+1. **Header & Profile**: Name, subtitle, tagline, quick copy email button, social & email links, and light/dark theme toggle.
 2. **Sticky Sub-Navigation**: Quick smooth-scroll navigation with active section indicator:
    - **Experience**: Accordion interface with `+` / `×` rotation micro-animations.
    - **Case Studies**: In-depth project cards with key metrics, overview, and expandable problem/solution/architecture breakdown.
@@ -25,7 +25,7 @@ All data is separated from UI logic. Simply edit:
 
 👉 [`src/data/portfolioData.ts`](./src/data/portfolioData.ts)
 
-- `profileData`: Name, title, email, LinkedIn, GitHub, resume PDF link
+- `profileData`: Name, title, email, LinkedIn, GitHub, Medium
 - `experienceData`: Companies, roles, periods, achievements, tags
 - `caseStudiesData`: Title, year, metrics, challenge, solution, architecture, results
 - `projectsData`: Project title, description, tags, GitHub / demo links

@@ -19,9 +19,10 @@ dist-ssr
 *.tex
 *.tex.bak
 
-# Allow public resume PDF for portfolio deployment
-!/res/resume_s.pdf
-!/public/res/resume_s.pdf
+# PDF Resumes & Assets (Private - never publish phone or personal details)
+*.pdf
+/res/
+/public/res/
 
 # Editor directories and files
 .vscode/*

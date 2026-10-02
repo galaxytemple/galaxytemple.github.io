@@ -433,6 +433,7 @@ html[data-theme='dark'] .sticky-top-bar.is-visible {
 .btn-modern-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.45rem;
   padding: 0.52rem 1.1rem;
   border-radius: 7px;
@@ -441,6 +442,8 @@ html[data-theme='dark'] .sticky-top-bar.is-visible {
   font-size: 0.86rem;
   font-weight: 500;
   border: 1px solid transparent;
+  cursor: pointer;
+  min-width: 114px;
   transition: all 0.15s ease;
 }
 

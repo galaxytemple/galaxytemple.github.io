@@ -101,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({ profile }) => {
 
           <button
             type="button"
-            className="btn-modern-ghost"
+            className={profile.pdfUrl ? 'btn-modern-ghost' : 'btn-modern-primary'}
             onClick={handleCopyEmail}
             title="Copy email to clipboard"
           >
