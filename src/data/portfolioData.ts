@@ -10,7 +10,7 @@ export const profileData: ProfileInfo = {
   name: "Sanghoon Kim",
   title: "Senior Software Engineer / Backend Systems & Cloud Architecture",
   tagline:
-    "Software engineer with 10+ years of experience across enterprise R&D and early-stage startups, specializing in backend platform architecture, distributed systems, and data pipelines. Experienced in designing, building, and operating backend systems and cloud infrastructure from prototype to production.",
+    "Software engineer with 10+ years of experience across enterprise R&D and startups, building scalable platform architecture, AI-powered applications, distributed systems, and cloud infrastructure. Hands-on experience across the full development lifecycle, from system design and implementation to production deployment and operation.",
   email: "galaxytemple@gmail.com",
   github: "https://github.com/galaxytemple",
   linkedin: "https://linkedin.com/in/galaxytemple",
@@ -25,18 +25,18 @@ export const experienceData: ExperienceItem[] = [
     location: "Remote (Based in Sunnyvale, CA / HQ: New York, NY)",
     period: "Jan 2025 - Jul 2026",
     summary:
-      "Engineering leadership across full-stack and Applied ML teams, driving core platform architecture, AI grant recommendation systems, and MCP infrastructure.",
+      "Engineering leadership across full-stack, AI, and data pipelines, driving 0-to-1 platform architecture, grant intelligence scoring, and MCP server infrastructure.",
     achievements: [
-      "Directed technical roadmap across full-stack and Applied ML teams; established architecture design reviews and mentored engineers on system design and code quality.",
-      "Architected and shipped the Giboo platform from scratch, implementing the Next.js web application, FastAPI backend services, LLM pipelines, and AWS cloud infrastructure for grant discovery and recommendations.",
-      "Built a grant discovery and recommendation pipeline over 100,000+ active US grants, combining LLM query expansion with multi-criteria rubric scoring. Curated positive and negative match benchmark sets to iteratively evaluate and tune rubrics, minimizing scoring variance across funder eligibility and program fit.",
-      "Designed and implemented custom MCP servers enabling internal AI applications to securely query databases and search APIs through schema-defined tools with scoped access controls.",
+      "Led engineering strategy and technical direction across frontend, backend, AI services, and data pipelines while staying hands-on with architecture and implementation. Made key technical decisions, designed and built critical systems, partnered with product and business teams on roadmap priorities, and raised engineering standards through code reviews and architecture practices.",
+      "Architected and built Giboo from 0 to 1, an AI-powered grant discovery and recommendation platform for non-profits. Directly owned the end-to-end implementation across Next.js frontend, FastAPI backend, PostgreSQL, LLM engines, and AWS infrastructure to take the product from concept to production launch.",
+      "Built an AI-powered grant analysis and recommendation pipeline over 150,000+ active grants, applying prompt optimization and rubric-based scoring to accurately rank opportunities across program similarity, eligibility, and application complexity.",
+      "Designed and implemented custom MCP servers enabling LLM applications to securely access internal databases and backend APIs.",
     ],
     tags: [
       "Python",
       "FastAPI",
       "AI/LLM",
-      "Model Context Protocol (MCP)",
+      "MCP Server",
       "Recommendation Engine",
       "Platform Architecture",
       "PostgreSQL",
@@ -52,17 +52,19 @@ export const experienceData: ExperienceItem[] = [
     summary:
       "Architected distributed PySpark data pipelines, hybrid cloud API infrastructure on AWS, and high-resilience multi-tenant SaaS backend services.",
     achievements: [
-      "Architected an offline PySpark pipeline transforming nested IRS Form 990 XML datasets into relational schemas. Built a Python entity resolution system combining TF-IDF and KNN candidate retrieval with fuzzy matching to reconcile 20M+ historical grant records, prioritizing precision over recall with high-confidence thresholds to avoid false-positive associations.",
-      "Separated compute-heavy LLM workloads and batch jobs from the FastAPI service into dedicated ECS workers. Decoupled asynchronous tasks using SQS and Lambda with idempotency keys to prevent duplicate processing on retries. Built automated CI/CD pipelines with blue/green deployments for zero-downtime releases.",
-      "Architected multi-tenant backend services with organization-level data isolation. Built Stripe subscription billing workflows and a transactional credit ledger to prevent race conditions and duplicate credit allocations; migrated backend services to stateless JWT authorization with OAuth 2.1 integration.",
-      "Configured CloudFront edge caching on public search endpoints to reduce database load and cut p95 API latency. Layered API Gateway rate limiting with dynamic load shedding as a final defense, dropping lower-priority requests during traffic spikes to protect critical authentication and billing APIs from cascading failures.",
-      "Optimized the grant discovery experience by separating server-side rendered (SSR) grant listing pages for initial load and SEO from client-side rendered (CSR) interactive comparison widgets, achieving Core Web Vitals of LCP 1.9s, INP 170ms, and CLS 0.1.",
+      "Built pipelines to extract and normalize IRS Form 990 XML data, and implemented PySpark-based distributed processing to process and match 20M+ historical grant records using entity resolution for search and recommendation systems.",
+      "Designed a hybrid architecture combining a core monolithic API with dedicated ECS services for compute-heavy AI workloads, background processing, and scheduled jobs. Decoupled resource-intensive tasks using SQS and Lambda with idempotency keys to improve API responsiveness and prevent duplicate processing.",
+      "Architected a multi-tenant backend with organization-level data isolation using FastAPI and PostgreSQL. Built Stripe billing workflows and a transactional credit system using database transactions and idempotency keys to ensure duplicate-safe credit allocation.",
+      "Migrated session-based authentication to stateless JWT authorization to remove per-request database session overhead, implemented OAuth 2.1 for third-party AI clients, and protected public endpoints against malicious bots using AWS WAF (Firewall) and honeypots.",
+      "Designed AIMD-based API Gateway load shedding to protect critical authentication and payment flows during database bottlenecks, and introduced CloudFront caching to reduce database load and p95 latency for expensive read endpoints.",
+      "Optimized the Next.js application by strategically choosing between SSR and CSR based on content requirements, improving performance metrics by over 50% and achieving LCP 1.9s, INP 170ms, and CLS 0.1.",
     ],
     tags: [
       "PySpark",
       "FastAPI",
       "PostgreSQL",
       "AWS ECS",
+      "Step Functions",
       "SQS & Lambda",
       "API Gateway",
       "Next.js",
@@ -78,17 +80,16 @@ export const experienceData: ExperienceItem[] = [
     location: "Seoul, South Korea",
     period: "Nov 2021 - Dec 2022",
     summary:
-      "Founding engineer responsible for initial AWS cloud infrastructure and real-time collaborative Markdown editing systems from scratch.",
+      "Founding engineer architecting a Notion-style real-time collaborative Markdown editor POC with low-latency document synchronization.",
     achievements: [
-      "Built a real-time collaborative Markdown editor prototype using React, WebSockets, and CRDT libraries to enable concurrent multi-user editing and document synchronization.",
-      "Built the initial AWS cloud infrastructure and deployment pipelines as a founding engineer; developed document processing prototypes to evaluate collaborative editing workflows.",
+      "Architected and built a Notion-style collaborative editor POC using React, WebSockets, and NoSQL, implementing document synchronization for low-latency, concurrent multi-user editing.",
     ],
     tags: [
       "React",
       "WebSockets",
-      "CRDT",
+      "NoSQL",
       "AWS",
-      "Markdown Parser",
+      "Collaborative Editor",
       "Real-Time Sync",
       "Prototyping",
     ],
@@ -103,10 +104,10 @@ export const experienceData: ExperienceItem[] = [
     summary:
       "Engineered high-throughput NLU training data pipelines for Bixby voice assistant, optimized on-device inference runtimes, and built division-wide enterprise desktop productivity software.",
     achievements: [
-      "Engineered a synthetic NLU training data pipeline in Python using multiprocessing, token substitution, and grammar rule transformations. Utilized file-based partitioned aggregation to reduce shared-memory lock contention during large-scale dataset generation.",
-      "Optimized on-device TensorFlow Lite NLU inference across Samsung Galaxy smartphones. Triggered model initialization at voice activity detection (VAD), reducing cold-start latency and enabling intent classification immediately after speech completion.",
-      "Built an Android AIDL service interface that wrapped low-level hardware instruction APIs into standardized high-level motion APIs for application developers. Developed a 3D robot simulator sharing the same interface, allowing applications to run seamlessly across physical hardware and simulation without code modifications.",
-      "Engineered a Windows desktop productivity tool (C#/WPF) adopted by 10,000+ employees (~70% of the division); automated attendance data extraction from the internal HR portal using an embedded browser and DOM scripts to display working hours.",
+      "Built a synthetic NLU training data pipeline for Bixby (voice assistant) supporting token substitution, rule transformations, parallel processing, and file-based aggregation, enabling efficient generation and deduplication of deep learning–ready datasets without shared-memory synchronization bottlenecks.",
+      "Developed and deployed TensorFlow Lite–based NLU inference on Samsung Galaxy devices (Android), optimizing cold-start latency and runtime performance. Built scalable backend services for server-side NLU model inference and benchmarking.",
+      "Designed an AIDL-based interface that abstracted hardware-specific APIs into standardized movement commands (move, rotate, stop) for robot applications. Developed a 3D robot simulator compatible with the production interface, enabling developers to test robot behaviors without physical hardware and removing prototype availability as a bottleneck.",
+      "Built a Windows desktop productivity tool (C#/WPF) adopted by 10,000+ employees (~70% of the workforce), providing instant access to daily and monthly working-hour data through automated background fetching from the HR portal.",
     ],
     tags: [
       "Python",
@@ -259,7 +260,7 @@ export const awardsData: AwardItem[] = [
     year: "2017",
     description: "Completed Associated Architect Program",
     details:
-      "Covered modular system architecture and distributed design patterns",
+      "Curriculum included system architecture design aligned with project requirements",
   },
   {
     id: "award-mobis-algo",
